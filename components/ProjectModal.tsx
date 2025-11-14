@@ -1,14 +1,10 @@
 import { useEffect } from 'react';
+import { Project } from '../types/project';
 
 interface ProjectModalProps {
   isOpen: boolean;
   onClose: () => void;
-  project: {
-    title: string;
-    description: string;
-    technologies: string[];
-    githubUrl: string;
-  } | null;
+  project: Project | null;
 }
 
 export default function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
@@ -95,7 +91,7 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
         {/* Actions */}
         <div className="flex">
           <a
-            href={project.githubUrl}
+            href={project.github}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full bg-blue-500 hover:bg-blue-600 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors"

@@ -12,7 +12,7 @@ export default function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="fixed top-4 left-6 z-[60] p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg">
+      <div className="fixed bottom-4 left-4 z-[60] p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg">
         <div className="w-6 h-6 animate-pulse bg-white/20 rounded"></div>
       </div>
     );
@@ -21,7 +21,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={handleClick}
-      className="fixed top-4 left-6 z-[60] p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-lg"
+      className="fixed bottom-4 left-4 z-[60] p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-lg"
       aria-label="Toggle theme"
       type="button"
     >

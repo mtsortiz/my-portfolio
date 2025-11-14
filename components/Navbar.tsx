@@ -10,15 +10,31 @@ export default function NavBar() {
   ];
 
   return (
-    <nav className="w-full fixed top-4 z-50 flex justify-center">
-      {/* Botones de redes en la esquina superior derecha */}
-     <div className="absolute right-6 top-0">
-        <div className="flex dark:bg-blue-400/40 light:bg-white/60 backdrop-blur-md border dark:border-blue-400/10 light:border-gray-300/30 px-6 py-2 rounded-full shadow-md space-x-4 items-center">
+    <>
+      {/* Navigation Menu - Centro superior */}
+      <nav className="w-full fixed top-4 z-50 flex justify-center">
+        <ul className="flex dark:bg-black/40 light:bg-white/60 backdrop-blur-md border dark:border-white/10 light:border-gray-300/30 px-6 py-2 rounded-full shadow-md space-x-4">
+          {links.map(({ href, label }) => (
+            <li key={href}>
+              <Link
+                href={href}
+                className="text-sm px-4 py-2 rounded-full transition-colors dark:text-white light:text-gray-700 dark:hover:bg-white/10 light:hover:bg-gray-200/50"
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      {/* Social Media Icons - Responsive positioning */}
+      <div className="fixed bottom-4 right-4 z-50 md:top-4 md:bottom-auto md:right-6">
+        <div className="flex flex-col md:flex-row dark:bg-blue-400/40 light:bg-white/60 backdrop-blur-md border dark:border-blue-400/10 light:border-gray-300/30 p-3 md:px-6 md:py-2 rounded-full shadow-md space-y-3 md:space-y-0 md:space-x-4 items-center">
           <a
             href="https://www.linkedin.com/in/tu-usuario/"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full transition dark:hover:bg-blue-400/20 light:hover:bg-gray-200/50 p-0"
+            className="rounded-full transition dark:hover:bg-blue-400/20 light:hover:bg-gray-200/50 p-1 md:p-0"
           >
             <img src="/icons/linkedin.svg" alt="LinkedIn" className="w-6 h-6" />
           </a>
@@ -26,24 +42,12 @@ export default function NavBar() {
             href="https://github.com/tu-usuario"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full transition dark:hover:bg-blue-400/20 light:hover:bg-gray-200/50 p-0"
+            className="rounded-full transition dark:hover:bg-blue-400/20 light:hover:bg-gray-200/50 p-1 md:p-0"
           >
             <img src="/icons/github.svg" alt="GitHub" className="w-6 h-6" />
           </a>
         </div>
       </div>
-      <ul className="flex dark:bg-black/40 light:bg-white/60 backdrop-blur-md border dark:border-white/10 light:border-gray-300/30 px-6 py-2 rounded-full shadow-md space-x-4">
-        {links.map(({ href, label }) => (
-          <li key={href}>
-            <Link
-              href={href}
-              className="text-sm px-4 py-2 rounded-full transition-colors dark:text-white light:text-gray-700 dark:hover:bg-white/10 light:hover:bg-gray-200/50"
-            >
-              {label}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    </>
   );
 }
