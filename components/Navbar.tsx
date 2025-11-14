@@ -40,7 +40,7 @@ export default function NavBar() {
       <div className="fixed bottom-4 right-4 z-50 md:top-4 md:bottom-auto md:right-6">
         <div className="flex flex-col md:flex-row dark:bg-blue-400/40 light:bg-white/60 backdrop-blur-md border dark:border-blue-400/10 light:border-gray-300/30 p-3 md:px-6 md:py-2 rounded-full shadow-md space-y-3 md:space-y-0 md:space-x-4 items-center">
           <a
-            href="https://www.linkedin.com/in/tu-usuario/"
+            href="https://www.linkedin.com/in/matiasnicolasortiz/"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full transition dark:hover:bg-blue-400/20 light:hover:bg-gray-200/50 p-1 md:p-0"
@@ -48,7 +48,7 @@ export default function NavBar() {
             <img src="/icons/linkedin.svg" alt="LinkedIn" className="w-6 h-6" />
           </a>
           <a
-            href="https://github.com/tu-usuario"
+            href="https://github.com/mtsortiz"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full transition dark:hover:bg-blue-400/20 light:hover:bg-gray-200/50 p-1 md:p-0"
