@@ -2,27 +2,130 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Variables de colores para temas */
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #111827;
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --accent-primary: #3b82f6;
+  --accent-secondary: #1d4ed8;
+  --gradient-bg: linear-gradient(135deg, #1B3C53 0%, #27374D 33%, #0A2647 66%, #162447 100%);
+}
+
+.light {
+  --bg-primary: #a0e7e5;
+  --bg-secondary: #64b3f4;
+  --text-primary: #1a365d;
+  --text-secondary: #2d3748;
+  --accent-primary: #2b6cb0;
+  --accent-secondary: #2c5aa0;
+  --light-link-color: #1f2937;
+  --gradient-bg: linear-gradient(135deg, #F7FBFC 0%, #D6E6F2 33%, #B9D7EA 66%, #769FCD 100%);
+}
+
 body {
   position: relative;
-  background-color: #000;
-  color: #fff;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   overflow-x: hidden;
   min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Contact links styling */
+.contact-link {
+  color: #d1d5db; /* Default dark mode */
+}
+
+.contact-link:hover {
+  color: #60a5fa; /* Default dark mode hover */
+}
+
+.light .contact-link {
+  color: #1f2937 !important; /* Force dark color in light mode */
+}
+
+.light .contact-link:hover {
+  color: #000000 !important; /* Force black on hover in light mode */
 }
 
 
 body::before {
   content: "";
-  position: fixed; /* Esto hace que se mantenga fijo en toda la página */
+  position: fixed;
   top: -50%;
   left: -50%;
   width: 200vw;
   height: 200vh;
-  background: radial-gradient(circle at center, rgba(0, 153, 255, 0.5), transparent 60%);
+  background: radial-gradient(circle at center, var(--accent-primary), transparent 60%);
   filter: blur(180px);
-  opacity: 0.7;
+  opacity: 0.3;
   z-index: -1;
   animation: moveBackground 20s ease-in-out infinite;
+  transition: background 0.3s ease, opacity 0.3s ease;
+}
+
+.light body::before {
+  opacity: 0.25;
+  background: radial-gradient(circle at center, #4299e1, transparent 60%);
+}
+
+/* Estilos adicionales para modo claro */
+.light .bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.25) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.light .border-white\/10 {
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.light .hover\:bg-white\/10:hover {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.light .text-white {
+  color: var(--text-primary) !important;
+  font-weight: 600;
+}
+
+.light .bg-blue-400\/40 {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+.light .hover\:bg-blue-400\/60:hover {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.light .border-blue-400\/10 {
+  border-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Mejoras para el toggle en modo claro */
+.light .bg-white\/10 {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.light .border-white\/20 {
+  border-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Mejoras de contraste para títulos */
+.light h1,
+.light h2,
+.light h3 {
+  color: var(--text-primary) !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Mejora del texto en modo claro */
+.light p,
+.light .text-text {
+  color: var(--text-secondary) !important;
+  font-weight: 500;
 }
 
 
@@ -117,4 +220,143 @@ a.nav-link::before {
 a.nav-link:hover::before {
   width: 200%;
   height: 200%;
+}
+
+/* Animaciones personalizadas */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDelayed {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-fadeIn-delayed {
+  animation: fadeInDelayed 1s ease-out 1s forwards;
+  opacity: 0;
+}
+
+/* Animaciones de botones sofisticadas */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.4);
+  }
+}
+
+@keyframes button-press {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1.02); }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.btn-animated {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-animated::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-animated:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-animated:hover {
+  animation: pulse-glow 2s infinite;
+}
+
+.btn-animated:active {
+  animation: button-press 0.2s ease-out;
+}
+
+/* Loading states elegantes */
+@keyframes spin-elegant {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes dots-loading {
+  0%, 20% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0; transform: scale(0.8); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  border-top: 2px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin-elegant 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+.loading-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.loading-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3b82f6;
+  animation: dots-loading 1.4s infinite ease-in-out;
+}
+
+.loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+.loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+.shimmer-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 2s infinite;
 }
