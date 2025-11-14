@@ -1,7 +1,47 @@
 import Navbar from '../components/Navbar';
 import ThemeToggle from '../components/ThemeToggle';
+import ProjectModal from '../components/ProjectModal';
+import { projectsData } from '../data/projects';
+import { useState } from 'react';
 
 export default function Home() {
+  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeFilters, setActiveFilters] = useState<string[]>([]);
+
+  // Main technologies for filtering (only the ones we have icons for)
+  const mainTechnologies = ['Python', 'Java', 'Kotlin', 'Spring Boot', 'MySQL', 'HTML', 'CSS'];
+
+  // Filter projects based on active filters
+  const filteredProjects = activeFilters.length === 0 
+    ? projectsData 
+    : projectsData.filter(project => 
+        activeFilters.some(filter => project.technologies.includes(filter))
+      );
+
+  const openModal = (projectId: string) => {
+    const project = projectsData.find(p => p.id === projectId);
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
+
+  const toggleFilter = (technology: string) => {
+    setActiveFilters(prev => 
+      prev.includes(technology)
+        ? prev.filter(t => t !== technology)
+        : [...prev, technology]
+    );
+  };
+
+  const clearFilters = () => {
+    setActiveFilters([]);
+  };
+
   return (
     <div id="home" className="min-h-screen transition-all duration-500" style={{background: 'var(--gradient-bg)'}}>
       <ThemeToggle />
@@ -20,7 +60,7 @@ export default function Home() {
             <br />
             <br />
             <br />
-            <p className="text-lg text-center max-w-xl mx-auto light:text-gray-700 light:font-semibold">
+            <p className="text-xl text-center max-w-xl mx-auto light:text-gray-700 light:font-semibold">
               I'm passionate about building robust and scalable backend systems that bring ideas to life.
             </p>
             
@@ -51,11 +91,13 @@ export default function Home() {
 
         {/* About Me */}
         <section id="about" className="w-full max-w-3xl p-6 min-h-screen flex flex-col justify-center snap-start mx-auto">
-          <h2 className="text-2xl font-bold text-primary mb-4 animate-fadeIn">ABOUT ME</h2>
+          <h2 className="text-3xl font-bold text-primary mb-4 animate-fadeIn">ABOUT ME</h2>
           <br />
-          <p className="text-text light:text-gray-700 light:font-medium">
-            I'm a software developer focused on Java stack. Passionate about creating efficient, scalable software.
-            Currently learning AI and exploring new technologies to enhance my skills.
+          <p className="text-lg text-text light:text-gray-700 light:font-medium">
+            I'm a fourth-year Information Systems Engineering student with a passion for software development. 
+            Over the past two years, I've been diving deep into Java development, building projects with Spring Boot 
+            and exploring database design with MySQL. Currently expanding my horizons with Python and Kotlin, 
+            while maintaining a strong focus on clean code, design patterns, and software architecture best practices.
           </p>
           <br />
           <br />
@@ -72,111 +114,67 @@ export default function Home() {
 
         {/* Projects */}
         <section id="projects" className="w-full max-w-5xl p-6 min-h-screen flex flex-col justify-center snap-start mx-auto">
-          <h2 className="text-2xl font-bold text-primary mb-4 animate-fadeIn">PROJECTS</h2>
-          <br />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-            <a
-              href="https://github.com/mtsortiz/ai-agents-final-project"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-4 shadow-lg hover:shadow-2xl hover:bg-white/10 transition-all duration-300 cursor-pointer block aspect-square flex flex-col transform hover:scale-105"
-            >
-              <div className="flex-1"></div>
-              <h3 className="text-xl font-semibold text-center w-full">Agente Conversacional: Mozo Virtual</h3>
-            </a>
+          <h2 className="text-3xl font-bold text-primary mb-4 animate-fadeIn">PROJECTS</h2>
+          
+          {/* Technology Filters */}
+          <div className="mb-6">
+            <div className="flex flex-wrap gap-2 mb-3">
+              <button
+                onClick={clearFilters}
+                className={`px-3 py-1 text-sm rounded-full transition-all duration-300 ${
+                  activeFilters.length === 0
+                    ? 'bg-blue-500 text-white'
+                    : 'bg-white/10 dark:text-gray-300 light:text-gray-700 hover:bg-white/20'
+                }`}
+              >
+                All Projects
+              </button>
+              {mainTechnologies.map((tech) => (
+                <button
+                  key={tech}
+                  onClick={() => toggleFilter(tech)}
+                  className={`px-3 py-1 text-sm rounded-full transition-all duration-300 ${
+                    activeFilters.includes(tech)
+                      ? 'bg-blue-500 text-white'
+                      : 'bg-white/10 dark:text-gray-300 light:text-gray-700 hover:bg-white/20'
+                  }`}
+                >
+                  {tech}
+                </button>
+              ))}
+            </div>
+            <p className="text-sm dark:text-gray-400 light:text-gray-600">
+              Showing {filteredProjects.length} of {projectsData.length} projects
+              {activeFilters.length > 0 && (
+                <span className="ml-2">
+                  • Filtered by: {activeFilters.join(', ')}
+                </span>
+              )}
+            </p>
+          </div>
 
-            <a
-              href="https://github.com/MatiOrtiz/AYDS25-SongInfo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-4 shadow-lg hover:shadow-2xl hover:bg-white/10 transition-all duration-300 cursor-pointer block aspect-square flex flex-col transform hover:scale-105"
-            >
-              <div className="flex-1"></div>
-              <h3 className="text-xl font-semibold text-center w-full">Song Info</h3>
-            </a>
-
-            <a
-              href="https://github.com/MatiOrtiz/surveyingg-app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-4 shadow-lg hover:shadow-2xl hover:bg-white/10 transition-all duration-300 cursor-pointer block aspect-square flex flex-col transform hover:scale-105"
-            >
-              <div className="flex-1"></div>
-              <h3 className="text-xl font-semibold text-center w-full">Surveying App</h3>
-            </a>
-
-            <a
-              href="https://github.com/MatiOrtiz/products-register"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-4 shadow-lg hover:shadow-2xl hover:bg-white/10 transition-all duration-300 cursor-pointer block aspect-square flex flex-col transform hover:scale-105"
-            >
-              <div className="flex-1"></div>
-              <h3 className="text-xl font-semibold text-center w-full">Products Itinerary</h3>
-            </a>
-
-            <a
-              href="https://github.com/MatiOrtiz/sistema-bancario-java-sql"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-4 shadow-lg hover:shadow-2xl hover:bg-white/10 transition-all duration-300 cursor-pointer block aspect-square flex flex-col transform hover:scale-105"
-            >
-              <div className="flex-1"></div>
-              <h3 className="text-xl font-semibold text-center w-full">ATM - Bank Employee Simulator</h3>
-            </a>
-
-            <a
-              href="https://github.com/MatiOrtiz/proyecto-yoyo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-4 shadow-lg hover:shadow-2xl hover:bg-white/10 transition-all duration-300 cursor-pointer block aspect-square flex flex-col transform hover:scale-105"
-            >
-              <div className="flex-1"></div>
-              <h3 className="text-xl font-semibold text-center w-full">Yoyo's Physical Data Analysis</h3>
-            </a>
-            
-            <a
-              href="https://github.com/MatiOrtiz/Rest-API-with-Spring-Boot"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-4 shadow-lg hover:shadow-2xl hover:bg-white/10 transition-all duration-300 cursor-pointer block aspect-square flex flex-col transform hover:scale-105"
-            >
-              <div className="flex-1"></div>
-              <h3 className="text-xl font-semibold text-center w-full">REST Api</h3>
-            </a>
-
-            <a
-              href="https://github.com/MatiOrtiz/CandyCrush"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-4 shadow-lg hover:shadow-2xl hover:bg-white/10 transition-all duration-300 cursor-pointer block aspect-square flex flex-col transform hover:scale-105"
-            >
-              <div className="flex-1"></div>
-              <h3 className="text-xl font-semibold text-center w-full">Candy Crush</h3>
-            </a>
-
-            <a
-              href="https://github.com/MatiOrtiz/BankSystem"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-4 shadow-lg hover:shadow-2xl hover:bg-white/10 transition-all duration-300 cursor-pointer block aspect-square flex flex-col transform hover:scale-105"
-            >
-              <div className="flex-1"></div>
-              <h3 className="text-xl font-semibold text-center w-full">Banking System Simulator</h3>
-            </a>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+            {filteredProjects.map((project) => (
+              <div
+                key={project.id}
+                onClick={() => openModal(project.id)}
+                className="bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-6 shadow-lg hover:shadow-2xl hover:bg-white/10 transition-all duration-300 cursor-pointer block flex items-center justify-center transform hover:scale-105 h-20 animate-fadeIn"
+              >
+                <h3 className="text-lg font-semibold text-center">{project.title}</h3>
+              </div>
+            ))}
           </div>
         </section>
 
         {/* Contact */}
         <section id="contact" className="w-full max-w-3xl p-6 min-h-screen flex flex-col justify-center snap-start mx-auto">
-          <h2 className="text-2xl font-bold text-primary mb-4 animate-fadeIn">CONTACT</h2>
-          <p className="text-text mb-6">Let's get in touch! Email me at: <a href="mailto:matiasnortiz.dev@gmail.com" className="contact-link underline">matiasnortiz.dev@gmail.com</a></p>
+          <h2 className="text-3xl font-bold text-primary mb-4 animate-fadeIn">CONTACT</h2>
+          <p className="text-text text-lg mb-6">Let's get in touch! Email me at: <a href="mailto:matiasnortiz.dev@gmail.com" className="contact-link underline">matiasnortiz.dev@gmail.com</a></p>
           
-          <p className="text-text">
+          <p className="text-text text-lg">
             Watch and download my CV: 
             <a 
-              href="https://drive.google.com/file/d/1h_fvO7kHfG_d0Xm_bg7if7r9BirwFy3p/view?usp=sharing" 
+              href="https://drive.google.com/file/d/19uD8ttoRBcRMhvmixjq00HgQ1-MYTXl1/view?usp=sharing" 
               target="_blank" 
               rel="noopener noreferrer"
               className="contact-link underline transition-colors duration-300 ml-1"
@@ -186,6 +184,13 @@ export default function Home() {
           </p>
         </section>
       </main>
+
+      {/* Project Modal */}
+      <ProjectModal 
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        project={selectedProject}
+      />
     </div>
   );
 }
