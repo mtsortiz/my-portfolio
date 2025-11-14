@@ -22,7 +22,7 @@ Componentes React organizados por responsabilidad:
 ### 📁 `/hooks`
 Hooks personalizados para lógica reutilizable:
 
-- `useScrollSpy.ts` - Actualiza URL basado en sección visible
+- `useProjectFilters.ts` - Gestión de filtros de proyectos (mutuamente excluyentes)
 - `useProjectFilters.ts` - Gestión de filtros de tecnología
 - `useProjectModal.ts` - Estado del modal de proyectos
 - `useTheme.ts` - Gestión de tema claro/oscuro
@@ -63,7 +63,7 @@ Datos de la aplicación:
 
 ```typescript
 // Importaciones desde índices
-import { useScrollSpy, useProjectFilters } from '../hooks';
+import { useProjectFilters, useProjectModal } from '../hooks';
 import { HeroSection, ProjectsSection } from '../components';
 
 // Tipos centralizados
@@ -72,15 +72,11 @@ import { Project } from '../types/project';
 
 ## 📦 Arquitectura de Hooks
 
-### `useScrollSpy`
-- **Propósito**: Actualizar URL automáticamente al hacer scroll
-- **Responsabilidad**: Observar intersección de secciones
-- **Configurable**: Secciones, threshold, rootMargin
-
 ### `useProjectFilters`  
-- **Propósito**: Gestionar filtrado de proyectos por tecnología
-- **Responsabilidad**: Estado de filtros y proyectos filtrados
+- **Propósito**: Gestionar filtrado de proyectos por tecnología (mutuamente excluyente)
+- **Responsabilidad**: Estado del filtro activo y proyectos filtrados
 - **Reutilizable**: Funciona con cualquier array de proyectos
+- **Comportamiento**: Solo un filtro activo a la vez
 
 ### `useProjectModal`
 - **Propósito**: Gestionar estado del modal de proyectos
