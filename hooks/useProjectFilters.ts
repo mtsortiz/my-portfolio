@@ -2,28 +2,24 @@ import { useState } from 'react';
 import { Project } from '../types/project';
 
 export const useProjectFilters = (projects: Project[], availableTechnologies: string[]) => {
-  const [activeFilters, setActiveFilters] = useState<string[]>([]);
+  const [activeFilter, setActiveFilter] = useState<string | null>(null);
 
-  const filteredProjects = activeFilters.length === 0 
+  const filteredProjects = activeFilter === null 
     ? projects 
-    : projects.filter(project => 
-        activeFilters.some(filter => project.technologies.includes(filter))
-      );
+    : projects.filter(project => project.technologies.includes(activeFilter));
 
   const toggleFilter = (technology: string) => {
-    setActiveFilters(prev => 
-      prev.includes(technology)
-        ? prev.filter(t => t !== technology)
-        : [...prev, technology]
+    setActiveFilter(prev => 
+      prev === technology ? null : technology
     );
   };
 
   const clearFilters = () => {
-    setActiveFilters([]);
+    setActiveFilter(null);
   };
 
   return {
-    activeFilters,
+    activeFilters: activeFilter ? [activeFilter] : [], // Mantenemos compatibilidad con array
     filteredProjects,
     toggleFilter,
     clearFilters

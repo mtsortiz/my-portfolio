@@ -13,6 +13,17 @@
   --gradient-bg: linear-gradient(135deg, #1B3C53 0%, #27374D 33%, #0A2647 66%, #162447 100%);
 }
 
+/* Prevenir el bounce scroll que causa la franja */
+* {
+  overscroll-behavior: none;
+}
+
+#__next {
+  background: var(--gradient-bg);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
 .light {
   --bg-primary: #a0e7e5;
   --bg-secondary: #64b3f4;
@@ -24,12 +35,22 @@
   --gradient-bg: linear-gradient(135deg, #F7FBFC 0%, #D6E6F2 33%, #B9D7EA 66%, #769FCD 100%);
 }
 
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  overflow-x: hidden;
+}
+
 body {
   position: relative;
-  background-color: var(--bg-primary);
+  background: var(--gradient-bg);
   color: var(--text-primary);
   overflow-x: hidden;
   min-height: 100vh;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-attachment: fixed;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -74,19 +95,33 @@ body {
 }
 
 
+/* Elemento de fondo fijo para evitar franjas al hacer scroll */
 body::before {
   content: "";
   position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200vw;
-  height: 200vh;
+  top: -100px;
+  left: -100px;
+  width: calc(100vw + 200px);
+  height: calc(100vh + 200px);
   background: radial-gradient(circle at center, var(--accent-primary), transparent 60%);
   filter: blur(180px);
   opacity: 0.3;
-  z-index: -1;
+  z-index: -2;
   animation: moveBackground 20s ease-in-out infinite;
   transition: background 0.3s ease, opacity 0.3s ease;
+}
+
+/* Segundo elemento de fondo para cobertura total y prevenir franja */
+body::after {
+  content: "";
+  position: fixed;
+  top: -100px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh + 200px);
+  background: var(--gradient-bg);
+  z-index: -3;
+  pointer-events: none;
 }
 
 .light body::before {
@@ -159,6 +194,18 @@ html, body {
   width: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+}
+
+/* Prevenir la franja que aparece al hacer overscroll */
+html {
+  background: var(--gradient-bg);
+  background-attachment: fixed;
+}
+
+body {
+  background: var(--gradient-bg);
+  background-attachment: fixed;
 }
 
 html {

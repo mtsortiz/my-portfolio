@@ -1,27 +1,36 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export default function NavBar() {
   const links = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About" },
-    { href: "#projects", label: "Projects" },
-    { href: "#contact", label: "Contact" },
+    { target: "home", label: "Home" },
+    { target: "about", label: "About" },
+    { target: "projects", label: "Projects" },
+    { target: "contact", label: "Contact" },
   ];
 
+  const handleScrollTo = (targetId: string) => {
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
-    <>
+    <div>
       {/* Navigation Menu - Centro superior */}
       <nav className="w-full fixed top-4 z-50 flex justify-center">
         <ul className="flex dark:bg-black/40 light:bg-white/60 backdrop-blur-md border dark:border-white/10 light:border-gray-300/30 px-6 py-2 rounded-full shadow-md space-x-4">
-          {links.map(({ href, label }) => (
-            <li key={href}>
-              <Link
-                href={href}
+          {links.map(({ target, label }) => (
+            <li key={target}>
+              <button
+                onClick={() => handleScrollTo(target)}
                 className="text-sm px-4 py-2 rounded-full transition-colors dark:text-white light:text-gray-700 dark:hover:bg-white/10 light:hover:bg-gray-200/50"
               >
                 {label}
-              </Link>
+              </button>
             </li>
           ))}
         </ul>
@@ -48,6 +57,6 @@ export default function NavBar() {
           </a>
         </div>
       </div>
-    </>
+    </div>
   );
 }

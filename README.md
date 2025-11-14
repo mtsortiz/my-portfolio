@@ -17,13 +17,13 @@ Un portfolio moderno y responsive desarrollado con Next.js, TypeScript y Tailwin
 - **Modo Claro/Oscuro** con persistencia en localStorage
 - **Efectos Glassmorphism** para un look moderno
 - **Animaciones suaves** y transiciones fluidas
-- **Scroll Spy** que actualiza automáticamente la URL
+- **Navegación suave** con scroll automático sin cambio de URL
 - **Responsive Design** optimizado para móvil, tablet y desktop
 
 ### 🛠️ **Funcionalidades**
 - **Sistema de Filtros** para proyectos por tecnología
 - **Modales interactivos** con detalles completos de proyectos
-- **Navegación suave** entre secciones
+- **Navegación por botones** con scroll suave entre secciones
 - **Links directos** a LinkedIn, GitHub y CV
 - **Iconos de tecnologías** con tooltips informativos
 
@@ -58,7 +58,7 @@ my-portfolio/
 ├── 📁 components/          # Componentes React organizados
 │   ├── 📁 sections/        # Secciones de página (Hero, About, etc.)
 │   ├── 📁 ui/             # Componentes UI reutilizables
-│   └── 📄 index.ts        # Exportaciones centralizadas
+│   └── 📄 Navbar.tsx      # Navegación con scroll suave
 ├── 📁 hooks/              # Custom hooks para lógica reutilizable
 ├── 📁 types/              # Definiciones TypeScript
 ├── 📁 data/               # Datos de proyectos y contenido
@@ -83,10 +83,14 @@ my-portfolio/
 - `ContactSection` - Información de contacto y CV
 
 ### **Hooks Personalizados**
-- `useScrollSpy` - Actualización automática de URL por scroll
 - `useProjectFilters` - Gestión de filtros de tecnología
 - `useProjectModal` - Estado del modal de proyectos
 - `useTheme` - Manejo del tema claro/oscuro
+
+### **Navegación**
+- **Scroll Suave** - Los botones del navbar usan `scrollIntoView` 
+- **URL Limpia** - Sin hash routing, mantiene la URL base
+- **Redirección Automática** - Cualquier URL con hash redirige a la base
 
 ## 🎨 Personalización
 
