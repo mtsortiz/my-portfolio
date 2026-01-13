@@ -2,6 +2,30 @@ import { Project } from '../types/project';
 
 export const projectsData: Project[] = [
   {
+    id: 'airline-ai-assistant',
+    title: 'Airline AI Assistant',
+    description: 'Intelligent conversational assistant for airline customer service. Provides flight information, booking assistance, and travel recommendations using advanced AI capabilities and natural language processing.',
+    technologies: ['Python', 'Natural Language Processing', 'Jupyter Notebook', 'Customer Service Automation'],
+    github: 'https://github.com/mtsortiz/airline-ai-assistant',
+    type: 'web'
+  },
+  {
+    id: 'business-brochure',
+    title: 'Business Brochure Generator',
+    description: 'Full-stack application for automated business brochure generation. Features a Next.js frontend with modern UI and a Python backend for web scraping and content generation. Creates professional marketing materials dynamically.',
+    technologies: ['Next.js', 'Python', 'Web Scraping', 'TypeScript', 'React', 'Content Generation'],
+    github: 'https://github.com/mtsortiz/business-brochure',
+    type: 'web'
+  },
+  {
+    id: 'techtutor',
+    title: 'TechTutor',
+    description: 'Interactive AI-powered technical tutoring assistant. Provides personalized learning experiences, code explanations, and programming guidance. Leverages web scraping for up-to-date technical content and documentation.',
+    technologies: ['Python', 'Jupyter Notebook', 'Web Scraping', 'Educational Technology'],
+    github: 'https://github.com/mtsortiz/techtutor',
+    type: 'web'
+  },
+  {
     id: 'ai-agent',
     title: 'Conversational AI Agent: Virtual Waiter',
     description: 'Developed a multi-agent system ("Virtual Waiter") using LangGraph and RAG with Google Gemini. Focused on task orchestration and integrating external databases for data persistence and reporting.',
@@ -14,7 +38,7 @@ export const projectsData: Project[] = [
     title: 'Music Finder',
     description: 'Mobile application development with Kotlin, focusing on SOLID principles and architectural patterns. Consumes LastFM and Spotify APIs.',
     technologies: ['Kotlin', 'SOLID', 'API Integration', 'Architectural Patterns', 'Android'],
-    github: 'https://github.com/MatiOrtiz/AYDS25-SongInfo',
+    github: 'https://github.com/mtsortiz/AYDS25-SongInfo',
     type: 'mobile'
   },
   {
@@ -22,7 +46,7 @@ export const projectsData: Project[] = [
     title: 'Surveying App',
     description: 'Professional surveying application designed for field data collection and measurement processing. Includes GPS integration, coordinate calculations, and reporting tools for surveying professionals.',
     technologies: ['Android', 'Java', 'GPS Integration', 'Mathematical Calculations', 'Data Processing'],
-    github: 'https://github.com/MatiOrtiz/surveyingg-app',
+    github: 'https://github.com/mtsortiz/surveyingg-app',
     type: 'mobile'
   },
   {
@@ -30,7 +54,7 @@ export const projectsData: Project[] = [
     title: 'Products Itinerary',
     description: 'Comprehensive product management system for tracking inventory, managing product lifecycles, and organizing itineraries. Features include barcode scanning, inventory tracking, and detailed product cataloging.',
     technologies: ['Java', 'Database Management', 'Inventory System', 'Backend Logic', 'Data Structures'],
-    github: 'https://github.com/MatiOrtiz/products-register',
+    github: 'https://github.com/mtsortiz/products-register',
     type: 'desktop'
   },
   {
@@ -38,7 +62,7 @@ export const projectsData: Project[] = [
     title: 'ATM Simulator – Bank Employee',
     description: 'Created a Java desktop application to simulate banking functionalities. Implemented role-based access control and utilized MySQL for transactional integrity (using Views, Functions, and Triggers).',
     technologies: ['Java', 'MySQL', 'Database Triggers', 'Access Control', 'Desktop Application'],
-    github: 'https://github.com/MatiOrtiz/sistema-bancario-java-sql',
+    github: 'https://github.com/mtsortiz/sistema-bancario-java-sql',
     type: 'desktop'
   },
   {
@@ -46,7 +70,7 @@ export const projectsData: Project[] = [
     title: "Yoyo's Physical Data Analysis",
     description: 'Scientific analysis application for processing and visualizing physical data from yoyo experiments. Includes statistical analysis, data visualization, and physics calculations for educational and research purposes.',
     technologies: ['Python', 'Data Analysis', 'Statistical Computing', 'Data Visualization', 'Scientific Computing'],
-    github: 'https://github.com/MatiOrtiz/proyecto-yoyo',
+    github: 'https://github.com/mtsortiz/proyecto-yoyo',
     type: 'desktop'
   },
   {
@@ -54,7 +78,7 @@ export const projectsData: Project[] = [
     title: 'REST Api',
     description: 'RESTful API built with Spring Boot framework, featuring comprehensive CRUD operations, authentication, data validation, and API documentation. Includes database integration and proper HTTP status handling.',
     technologies: ['Java', 'Spring Boot', 'REST API', 'Database Integration', 'HTTP Protocols'],
-    github: 'https://github.com/MatiOrtiz/Rest-API-with-Spring-Boot',
+    github: 'https://github.com/mtsortiz/Rest-API-with-Spring-Boot',
     type: 'web'
   },
   {
@@ -62,7 +86,7 @@ export const projectsData: Project[] = [
     title: "TODO's Web Application",
     description: 'Developed a full-stack web application using Spring Boot and Spring Security for task management (CRUD). Focused on secure authentication and persistence with Spring Data JPA.',
     technologies: ['Spring Boot', 'Spring Security', 'Spring Data JPA', 'H2', 'Java'],
-    github: 'https://github.com/MatiOrtiz/toDoManagerWebApp',
+    github: 'https://github.com/mtsortiz/toDoManagerWebApp',
     type: 'web'
   },
   {
@@ -70,7 +94,7 @@ export const projectsData: Project[] = [
     title: 'Reversioned Candy Crush',
     description: 'Developed a Match-3 game in Java with a focus on OOP architecture. Applied Design Patterns and managed Concurrency for game logic. Included a persistent ranking system.',
     technologies: ['Java', 'Design Patterns', 'Concurrency', 'OOP', 'Data Structures'],
-    github: 'https://github.com/MatiOrtiz/CandyCrush',
+    github: 'https://github.com/mtsortiz/CandyCrush',
     type: 'game'
   }
 ];

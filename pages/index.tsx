@@ -16,7 +16,7 @@ export default function Home() {
   const router = useRouter();
   
   // Main technologies for filtering (only the ones we have icons for)
-  const mainTechnologies = ['Python', 'Java', 'Kotlin', 'Spring Boot', 'MySQL', 'HTML', 'CSS'];
+  const mainTechnologies = ['Python', 'Java', 'Kotlin', 'Spring Boot', 'MySQL', 'HTML', 'CSS', 'Next.js', 'TypeScript', 'React'];
 
   // Custom hooks for modular functionality
   const { activeFilters, filteredProjects, toggleFilter, clearFilters } = useProjectFilters(projectsData, mainTechnologies);
@@ -57,6 +57,12 @@ export default function Home() {
         />
         <ContactSection />
       </main>
+
+      <footer className="w-full py-6 border-t border-gray-300 dark:border-gray-700">
+        <p className="text-center text-text text-sm opacity-70">
+          © {new Date().getFullYear()} Matias Nicolas Ortiz. All rights reserved.
+        </p>
+      </footer>
 
       <ProjectModal
         isOpen={isModalOpen}
