@@ -2,6 +2,14 @@ import { Project } from '../types/project';
 
 export const projectsData: Project[] = [
   {
+    id: 'crypto-ai-assistant',
+    title: 'Crypto AI-ssistant',
+    description: 'Production-ready crypto financial assistant built with a modular architecture. Combines LangGraph agent orchestration, RAG over whitepapers with Chroma, and a FastAPI /chat endpoint to deliver market insights and technical explanations.',
+    technologies: ['Python', 'LangGraph', 'FastAPI', 'RAG', 'Chroma', 'Google Gemini'],
+    github: 'https://github.com/mtsortiz/crypto-aissistant',
+    type: 'web'
+  },
+  {
     id: 'airline-ai-assistant',
     title: 'Airline AI Assistant',
     description: 'Intelligent conversational assistant for airline customer service. Provides flight information, booking assistance, and travel recommendations using advanced AI capabilities and natural language processing.',
@@ -72,14 +80,6 @@ export const projectsData: Project[] = [
     technologies: ['Python', 'Data Analysis', 'Statistical Computing', 'Data Visualization', 'Scientific Computing'],
     github: 'https://github.com/mtsortiz/proyecto-yoyo',
     type: 'desktop'
-  },
-  {
-    id: 'rest-api',
-    title: 'REST Api',
-    description: 'RESTful API built with Spring Boot framework, featuring comprehensive CRUD operations, authentication, data validation, and API documentation. Includes database integration and proper HTTP status handling.',
-    technologies: ['Java', 'Spring Boot', 'REST API', 'Database Integration', 'HTTP Protocols'],
-    github: 'https://github.com/mtsortiz/Rest-API-with-Spring-Boot',
-    type: 'web'
   },
   {
     id: 'todo-web-app',
