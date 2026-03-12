@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Project } from '../types/project';
 
 interface ProjectModalProps {
@@ -8,6 +8,23 @@ interface ProjectModalProps {
 }
 
 export default function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
+  const [isLightMode, setIsLightMode] = useState(false);
+
+  useEffect(() => {
+    const html = document.documentElement;
+
+    const updateThemeState = () => {
+      setIsLightMode(html.classList.contains('light'));
+    };
+
+    updateThemeState();
+
+    const observer = new MutationObserver(updateThemeState);
+    observer.observe(html, { attributes: true, attributeFilter: ['class'] });
+
+    return () => observer.disconnect();
+  }, []);
+
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -40,6 +57,8 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
 
   if (!isOpen || !project) return null;
 
+  const activeCover = isLightMode && project.coverLight ? project.coverLight : project.cover;
+
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center">
       {/* Backdrop */}
@@ -53,7 +72,7 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-300 light:text-gray-600 hover:text-white light:hover:text-gray-900 transition-colors"
+          className="absolute top-4 right-4 z-20 text-gray-300 light:text-gray-700 hover:text-white light:hover:text-gray-900 transition-colors bg-black/25 light:bg-white/70 backdrop-blur-sm rounded-full p-1"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -62,6 +81,20 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
 
         {/* Content */}
         <div className="mb-6">
+          {activeCover && (
+            <div className="relative mb-4 h-40 w-full overflow-hidden rounded-lg border dark:border-white/10 light:border-gray-200">
+              <div
+                className="absolute inset-0"
+                style={{
+                  backgroundImage: `url(${activeCover})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
+              />
+              <div className="absolute inset-0 bg-black/20 light:bg-white/10" />
+            </div>
+          )}
+
           <h3 className="text-xl font-bold mb-3 dark:text-white light:text-gray-900">
             {project.title}
           </h3>

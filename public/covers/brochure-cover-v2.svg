@@ -1,0 +1,48 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10181a"/>
+      <stop offset="100%" stop-color="#172527"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#88e8d0"/>
+      <stop offset="100%" stop-color="#b9ffd8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <g opacity="0.18" stroke="#a1d2c4" stroke-width="1.4">
+    <path d="M0 225 H1600"/>
+    <path d="M0 450 H1600"/>
+    <path d="M0 675 H1600"/>
+    <path d="M320 0 V900"/>
+    <path d="M640 0 V900"/>
+    <path d="M960 0 V900"/>
+    <path d="M1280 0 V900"/>
+  </g>
+
+  <rect x="160" y="290" width="220" height="320" rx="18" fill="#203032" stroke="#9af2d7" stroke-width="2"/>
+  <rect x="195" y="350" width="145" height="9" rx="4.5" fill="#8fceb9"/>
+  <rect x="195" y="377" width="170" height="9" rx="4.5" fill="#a5e7cf"/>
+  <rect x="195" y="404" width="120" height="9" rx="4.5" fill="#8fceb9"/>
+
+  <rect x="500" y="340" width="220" height="220" rx="18" fill="#243638" stroke="#a7f5de" stroke-width="2"/>
+  <circle cx="610" cy="450" r="54" fill="#2a4a46" stroke="#baffea" stroke-width="2"/>
+
+  <rect x="830" y="340" width="220" height="220" rx="18" fill="#243638" stroke="#9df0d8" stroke-width="2"/>
+  <path d="M880 470 H1000" stroke="#b5ffe8" stroke-width="3"/>
+  <path d="M880 430 H970" stroke="#95d4c0" stroke-width="3"/>
+
+  <rect x="1150" y="220" width="300" height="460" rx="18" fill="#eef3ee" stroke="#b9d8c8" stroke-width="3"/>
+  <rect x="1185" y="282" width="230" height="10" rx="5" fill="#7eb39e"/>
+  <rect x="1185" y="316" width="190" height="10" rx="5" fill="#9dc7b5"/>
+  <rect x="1185" y="350" width="240" height="10" rx="5" fill="#9dc7b5"/>
+  <rect x="1185" y="404" width="230" height="130" rx="10" fill="#d5e6dc"/>
+
+  <path d="M380 450 H500" stroke="url(#line)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M720 450 H830" stroke="url(#line)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M1050 450 H1150" stroke="url(#line)" stroke-width="5" stroke-linecap="round"/>
+
+  <text x="800" y="830" fill="#b8cdc5" text-anchor="middle" font-family="Segoe UI, Arial" font-size="24" letter-spacing="1.5">CONTENT SYNTHESIS PIPELINE</text>
+</svg>

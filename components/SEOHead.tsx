@@ -5,7 +5,7 @@ const SEOHead = () => {
     <Head>
       {/* Basic Meta Tags */}
       <title>Matías Nicolás Ortiz - Software Developer Portfolio</title>
-      <meta name="description" content="Matías Nicolás Ortiz's Portfolio - Developer with expertise in Java and Spring Boot, exploring Python and Kotlin. Advanced Information Systems Engineering Student." />
+      <meta name="description" content="Matías Nicolás Ortiz's Portfolio - Developer with experience in Python, FastAPI and LangGraph - Java y Spring. Advanced Information Systems Engineering Student." />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Head>
   );

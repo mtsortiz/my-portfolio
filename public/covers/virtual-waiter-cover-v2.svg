@@ -1,0 +1,43 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1c1214"/>
+      <stop offset="100%" stop-color="#2a1b1d"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f3b89a"/>
+      <stop offset="100%" stop-color="#ffe1ce"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <g opacity="0.17" stroke="#d2a996" stroke-width="1.4">
+    <path d="M0 225 H1600"/>
+    <path d="M0 450 H1600"/>
+    <path d="M0 675 H1600"/>
+    <path d="M320 0 V900"/>
+    <path d="M640 0 V900"/>
+    <path d="M960 0 V900"/>
+    <path d="M1280 0 V900"/>
+  </g>
+
+  <circle cx="230" cy="450" r="58" fill="#4b2f31" stroke="#f3c1a7" stroke-width="2"/>
+  <rect x="500" y="350" width="210" height="200" rx="18" fill="#5a3838" stroke="#ffd2bc" stroke-width="2"/>
+  <rect x="830" y="240" width="210" height="165" rx="18" fill="#664141" stroke="#ffd2bc" stroke-width="2"/>
+  <rect x="830" y="495" width="210" height="165" rx="18" fill="#664141" stroke="#ffd2bc" stroke-width="2"/>
+
+  <rect x="1160" y="275" width="280" height="350" rx="18" fill="#f3ece8" stroke="#d7b7a8" stroke-width="3"/>
+  <rect x="1195" y="335" width="210" height="10" rx="5" fill="#b98d79"/>
+  <rect x="1195" y="367" width="180" height="10" rx="5" fill="#c6a597"/>
+  <rect x="1195" y="399" width="225" height="10" rx="5" fill="#c6a597"/>
+  <rect x="1195" y="460" width="190" height="90" rx="10" fill="#e3d1c8"/>
+
+  <path d="M288 450 H500" stroke="url(#line)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M710 430 C770 380, 775 345, 830 322" stroke="#ffcdb6" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M710 470 C770 520, 775 555, 830 578" stroke="#ffcdb6" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M1040 322 C1090 326, 1112 354, 1160 390" stroke="#f7c7b1" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M1040 578 C1090 572, 1112 544, 1160 510" stroke="#f7c7b1" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+  <text x="800" y="830" fill="#d6b8ab" text-anchor="middle" font-family="Segoe UI, Arial" font-size="24" letter-spacing="1.5">ROUTED CONVERSATION FLOW</text>
+</svg>

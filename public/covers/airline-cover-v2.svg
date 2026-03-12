@@ -1,0 +1,47 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1930"/>
+      <stop offset="100%" stop-color="#13294a"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#79c8ff"/>
+      <stop offset="100%" stop-color="#9ff3ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <g opacity="0.2" stroke="#7cb8e8" stroke-width="1.4">
+    <path d="M0 180 H1600"/>
+    <path d="M0 360 H1600"/>
+    <path d="M0 540 H1600"/>
+    <path d="M0 720 H1600"/>
+    <path d="M220 0 V900"/>
+    <path d="M440 0 V900"/>
+    <path d="M660 0 V900"/>
+    <path d="M880 0 V900"/>
+    <path d="M1100 0 V900"/>
+    <path d="M1320 0 V900"/>
+    <path d="M1540 0 V900"/>
+  </g>
+
+  <circle cx="230" cy="450" r="56" fill="#1f3658" stroke="#8ad0ff" stroke-width="2"/>
+  <rect x="500" y="335" width="230" height="230" rx="18" fill="#234067" stroke="#96dbff" stroke-width="2"/>
+  <rect x="850" y="275" width="220" height="110" rx="14" fill="#1f3b5f" stroke="#8ad0ff" stroke-width="2"/>
+  <rect x="850" y="515" width="220" height="110" rx="14" fill="#1f3b5f" stroke="#9ff3ff" stroke-width="2"/>
+
+  <rect x="1140" y="245" width="320" height="410" rx="18" fill="#0f223d" stroke="#80c9ff" stroke-width="2"/>
+  <rect x="1175" y="305" width="230" height="10" rx="5" fill="#6da9d8"/>
+  <rect x="1175" y="337" width="205" height="10" rx="5" fill="#8fc5ec"/>
+  <rect x="1175" y="369" width="245" height="10" rx="5" fill="#6da9d8"/>
+  <rect x="1175" y="443" width="190" height="10" rx="5" fill="#8fc5ec"/>
+
+  <path d="M286 450 H500" stroke="url(#line)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M730 430 C790 380, 800 350, 850 330" stroke="#7ec4ff" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M730 470 C790 520, 800 550, 850 570" stroke="#a2f6ff" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M1070 330 C1110 330, 1120 340, 1140 360" stroke="#7ec4ff" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M1070 570 C1110 570, 1120 540, 1140 510" stroke="#a2f6ff" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+  <text x="800" y="830" fill="#a6bfd9" text-anchor="middle" font-family="Segoe UI, Arial" font-size="24" letter-spacing="1.5">AIRLINE CUSTOMER ASSISTANCE FLOW</text>
+</svg>

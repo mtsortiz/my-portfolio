@@ -1,0 +1,47 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef5ff"/>
+      <stop offset="100%" stop-color="#dcecff"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4e86d4"/>
+      <stop offset="100%" stop-color="#63b6d2"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <g opacity="0.35" stroke="#b9cde6" stroke-width="1.5">
+    <path d="M0 180 H1600"/>
+    <path d="M0 360 H1600"/>
+    <path d="M0 540 H1600"/>
+    <path d="M0 720 H1600"/>
+    <path d="M200 0 V900"/>
+    <path d="M400 0 V900"/>
+    <path d="M600 0 V900"/>
+    <path d="M800 0 V900"/>
+    <path d="M1000 0 V900"/>
+    <path d="M1200 0 V900"/>
+    <path d="M1400 0 V900"/>
+  </g>
+
+  <circle cx="240" cy="450" r="56" fill="#c9dbef" stroke="#6da0d8" stroke-width="2"/>
+  <circle cx="580" cy="450" r="72" fill="#bdd3ec" stroke="#6d9fcf" stroke-width="2.5"/>
+  <rect x="860" y="310" width="170" height="88" rx="14" fill="#c7dff3" stroke="#6da0d8" stroke-width="2"/>
+  <rect x="860" y="502" width="170" height="88" rx="14" fill="#c7dff3" stroke="#67b8c8" stroke-width="2"/>
+
+  <rect x="1125" y="245" width="320" height="410" rx="18" fill="#f8fbff" stroke="#86aeda" stroke-width="2"/>
+  <rect x="1160" y="300" width="210" height="10" rx="5" fill="#88aad2"/>
+  <rect x="1160" y="332" width="245" height="10" rx="5" fill="#a9c1df"/>
+  <rect x="1160" y="364" width="195" height="10" rx="5" fill="#88aad2"/>
+  <rect x="1160" y="438" width="180" height="10" rx="5" fill="#a9c1df"/>
+
+  <path d="M296 450 H496" stroke="url(#line)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M648 420 C760 360, 770 350, 860 354" stroke="#5e8fcc" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M648 480 C760 540, 770 550, 860 546" stroke="#6fbcbf" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M1030 354 C1080 354, 1088 334, 1125 336" stroke="#5e8fcc" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M1030 546 C1080 546, 1088 478, 1125 460" stroke="#6fbcbf" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+  <text x="800" y="830" fill="#728fb1" text-anchor="middle" font-family="Segoe UI, Arial" font-size="24" letter-spacing="1.5">GROUNDED RESPONSE FLOW</text>
+</svg>

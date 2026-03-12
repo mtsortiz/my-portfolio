@@ -7,6 +7,8 @@ export const projectsData: Project[] = [
     description: 'Production-ready crypto financial assistant built with a modular architecture. Combines LangGraph agent orchestration, RAG over whitepapers with Chroma, and a FastAPI /chat endpoint to deliver market insights and technical explanations.',
     technologies: ['Python', 'LangGraph', 'FastAPI', 'RAG', 'Chroma', 'Google Gemini'],
     github: 'https://github.com/mtsortiz/crypto-aissistant',
+    cover: '/covers/crypto-cover-v2.svg',
+    coverLight: '/covers/crypto-cover-v2-light.svg',
     type: 'web'
   },
   {
@@ -15,6 +17,8 @@ export const projectsData: Project[] = [
     description: 'Intelligent conversational assistant for airline customer service. Provides flight information, booking assistance, and travel recommendations using advanced AI capabilities and natural language processing.',
     technologies: ['Python', 'Natural Language Processing', 'Jupyter Notebook', 'Customer Service Automation'],
     github: 'https://github.com/mtsortiz/airline-ai-assistant',
+    cover: '/covers/airline-cover-v2.svg',
+    coverLight: '/covers/airline-cover-v2-light.svg',
     type: 'web'
   },
   {
@@ -23,6 +27,8 @@ export const projectsData: Project[] = [
     description: 'Full-stack application for automated business brochure generation. Features a Next.js frontend with modern UI and a Python backend for web scraping and content generation. Creates professional marketing materials dynamically.',
     technologies: ['Next.js', 'Python', 'Web Scraping', 'TypeScript', 'React', 'Content Generation'],
     github: 'https://github.com/mtsortiz/business-brochure',
+    cover: '/covers/brochure-cover-v2.svg',
+    coverLight: '/covers/brochure-cover-v2-light.svg',
     type: 'web'
   },
   {
@@ -31,6 +37,8 @@ export const projectsData: Project[] = [
     description: 'Interactive AI-powered technical tutoring assistant. Provides personalized learning experiences, code explanations, and programming guidance. Leverages web scraping for up-to-date technical content and documentation.',
     technologies: ['Python', 'Jupyter Notebook', 'Web Scraping', 'Educational Technology'],
     github: 'https://github.com/mtsortiz/techtutor',
+    cover: '/covers/techtutor-cover-v2.svg',
+    coverLight: '/covers/techtutor-cover-v2-light.svg',
     type: 'web'
   },
   {
@@ -39,6 +47,8 @@ export const projectsData: Project[] = [
     description: 'Developed a multi-agent system ("Virtual Waiter") using LangGraph and RAG with Google Gemini. Focused on task orchestration and integrating external databases for data persistence and reporting.',
     technologies: ['Google Gemini', 'LangGraph', 'RAG', 'Vector Databases', 'Python'],
     github: 'https://github.com/mtsortiz/ai-agents-final-project',
+    cover: '/covers/virtual-waiter-cover-v2.svg',
+    coverLight: '/covers/virtual-waiter-cover-v2-light.svg',
     type: 'desktop'
   },
   {
