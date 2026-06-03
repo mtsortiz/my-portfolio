@@ -8,7 +8,7 @@ const AboutSection: React.FC = () => {
       <br />
       <p className="text-lg text-text light:text-gray-700 light:font-medium">
         I'm a fifth-year Information Systems Engineering student with a passion for software development. 
-        Over the past two years, I've been diving deep into Java development, building personal projects with Spring Boot 
+        Over the past three years, I've been diving deep into Java development, building personal projects with Spring Boot 
         and exploring database design with MySQL. Currently expanding my horizons with Python and Kotlin, 
         while maintaining a strong focus on clean code, design patterns, and software architecture best practices.
       </p>
