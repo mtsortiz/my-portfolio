@@ -14,7 +14,7 @@ const ContactSection: React.FC = () => {
       <p className="text-text text-lg">
         Watch and download my CV:{' '}
         <a 
-          href="https://drive.google.com/file/d/19uD8ttoRBcRMhvmixjq00HgQ1-MYTXl1/view?usp=sharing" 
+          href="https://drive.google.com/file/d/1ws8jAso-kj8RIQFSqph_kbhWAh3Cp9pC/view?usp=drive_link" 
           target="_blank" 
           rel="noopener noreferrer"
           className="contact-link underline transition-colors duration-300 ml-1"
