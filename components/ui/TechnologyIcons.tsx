@@ -8,13 +8,13 @@ interface Technology {
 
 const technologies: Technology[] = [
   { name: 'Python', icon: '/icons/python.svg', title: 'Python - AI & Scripting' },
+  { name: 'FastAPI', icon: '/icons/fastapi.svg', title: 'FastAPI - Modern Web APIs' },
   { name: 'LangChain', icon: '/icons/langgraph.svg', title: 'LangChain - LLM Application Framework' },
+  { name: 'SQLite', icon: '/icons/sqlite.svg', title: 'SQLite - Embedded Relational Database' },
   { name: 'Java', icon: '/icons/java.svg', title: 'Java - Backend Development' },
   { name: 'Spring', icon: '/icons/spring.svg', title: 'Spring Framework - Enterprise Java' },
   { name: 'Kotlin', icon: '/icons/kotlin.svg', title: 'Kotlin - Android Development' },
   { name: 'MySQL', icon: '/icons/mysql.svg', title: 'MySQL - Database Management' },
-  { name: 'HTML', icon: '/icons/html.svg', title: 'HTML5 - Web Markup' },
-  { name: 'CSS', icon: '/icons/css.svg', title: 'CSS3 - Web Styling' },
   { name: 'Docker', icon: '/icons/docker.svg', title: 'Docker - Containerization' }
 ];
 

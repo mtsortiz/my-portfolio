@@ -2,6 +2,16 @@ import { Project } from '../types/project';
 
 export const projectsData: Project[] = [
   {
+    id: 'wine-data-agent',
+    title: 'Wine Data Agent',
+    description: 'FastAPI conversational agent designed to query and retrieve technical wine data from a local SQLite database. Integrates LangChain/LangGraph, Google Gemini, and a persistent Chroma vector store for RAG, maintaining conversation context via thread-based memory.',
+    technologies: ['FastAPI', 'LangChain', 'LangGraph', 'Google Gemini', 'SQLite', 'Chroma', 'Python'],
+    github: 'https://github.com/mtsortiz/wines-agent',
+    cover: '/covers/wine-agent-dark.svg',
+    coverLight: '/covers/wine-agent-light.svg',
+    type: 'web'
+  },
+  {
     id: 'crypto-ai-assistant',
     title: 'Crypto AI-ssistant',
     description: 'Production-ready crypto financial assistant built with a modular architecture. Combines LangGraph agent orchestration, RAG over whitepapers with Chroma, and a FastAPI /chat endpoint to deliver market insights and technical explanations.',
@@ -60,18 +70,10 @@ export const projectsData: Project[] = [
     type: 'mobile'
   },
   {
-    id: 'surveying-app',
-    title: 'Surveying App',
-    description: 'Professional surveying application designed for field data collection and measurement processing. Includes GPS integration, coordinate calculations, and reporting tools for surveying professionals.',
-    technologies: ['Android', 'Java', 'GPS Integration', 'Mathematical Calculations', 'Data Processing'],
-    github: 'https://github.com/mtsortiz/surveyingg-app',
-    type: 'mobile'
-  },
-  {
     id: 'products-register',
     title: 'Products Itinerary',
     description: 'Comprehensive product management system for tracking inventory, managing product lifecycles, and organizing itineraries. Features include barcode scanning, inventory tracking, and detailed product cataloging.',
-    technologies: ['Java', 'Database Management', 'Inventory System', 'Backend Logic', 'Data Structures'],
+    technologies: ['Kotlin', 'Database Management', 'Inventory System', 'Backend Logic', 'Data Structures'],
     github: 'https://github.com/mtsortiz/products-register',
     type: 'desktop'
   },

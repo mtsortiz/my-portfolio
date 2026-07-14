@@ -68,7 +68,7 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
       />
       
       {/* Modal */}
-      <div className="relative bg-white/10 dark:bg-white/10 light:bg-white/90 backdrop-blur-md border border-white/20 rounded-xl p-6 max-w-md w-full mx-4 shadow-2xl">
+      <div className="relative bg-white/10 dark:bg-white/10 light:bg-white/90 backdrop-blur-md border border-white/20 rounded-xl p-6 max-w-2xl w-full mx-4 shadow-2xl">
         {/* Close button */}
         <button
           onClick={onClose}
@@ -82,7 +82,7 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
         {/* Content */}
         <div className="mb-6">
           {activeCover && (
-            <div className="relative mb-4 h-40 w-full overflow-hidden rounded-lg border dark:border-white/10 light:border-gray-200">
+            <div className="relative mb-4 w-full aspect-[16/9] overflow-hidden rounded-lg border dark:border-white/10 light:border-gray-200">
               <div
                 className="absolute inset-0"
                 style={{
@@ -91,7 +91,6 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
                   backgroundPosition: 'center'
                 }}
               />
-              <div className="absolute inset-0 bg-black/20 light:bg-white/10" />
             </div>
           )}
 
