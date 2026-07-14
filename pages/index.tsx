@@ -16,7 +16,7 @@ export default function Home() {
   const router = useRouter();
   
   // Main technologies for filtering (only the ones we have icons for)
-  const mainTechnologies = ['Python', 'Java', 'Kotlin', 'Spring Boot', 'MySQL', 'HTML', 'CSS', 'Next.js', 'TypeScript', 'React'];
+  const mainTechnologies = ['Python', 'Java', 'Kotlin', 'Spring Boot', 'MySQL', 'Next.js', 'TypeScript', 'React'];
 
   // Custom hooks for modular functionality
   const { activeFilters, filteredProjects, toggleFilter, clearFilters } = useProjectFilters(projectsData, mainTechnologies);
